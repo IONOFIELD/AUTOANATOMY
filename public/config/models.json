@@ -1,0 +1,93 @@
+{
+  "$comment": "Registry of 3D models and the mesh-name -> layer mapping for each. Mesh names are NEVER hardcoded in app code; when a real GLB replaces a placeholder, only update meshLayerMap here. Patterns are exact names or prefixes ending in '*' (longest pattern wins) and are matched against each mesh's own name and then its ancestor group names. The vehicle uses the CC-BY Sketchfab W221 by Black Snow (prepared via scripts/prepare-w221.mjs) plus generated wheels/harness (vehicle-extras.glb); the engine model stays procedural because the kit has no engine internals. The procedural vehicle.glb remains available as a fallback.",
+  "layers": [
+    { "id": "body", "name": "Body Panels", "order": 1 },
+    { "id": "chassis", "name": "Frame / Chassis + Suspension", "order": 2 },
+    { "id": "harness", "name": "Wiring Harness", "order": 3 },
+    { "id": "engine", "name": "Engine — M275 V12", "order": 4 },
+    { "id": "internals", "name": "Engine Internals", "order": 5 }
+  ],
+  "models": [
+    {
+      "id": "vehicle",
+      "name": "W221 S65 AMG",
+      "files": ["models/w221-sketchfab.glb", "models/vehicle-extras.glb"],
+      "focusLayerIds": ["body", "chassis", "harness", "engine"],
+      "camera": { "position": [5.4, 2.8, 6.6], "target": [0, 0.7, 0] },
+      "meshLayerMap": {
+        "sw221_body_sedan*": "body",
+        "sw221_bumper_*": "body",
+        "sw221_fender_*": "body",
+        "sw221_hood_*": "body",
+        "sw221_door_*": "body",
+        "sw221_doorglass_*": "body",
+        "sw221_doorpanel_*": "body",
+        "sw221_tailgate*": "body",
+        "sw221_windshield*": "body",
+        "sw221_backlight*": "body",
+        "sw221_sideskirts*": "body",
+        "sw221_mirror*": "body",
+        "sw221_headlight*": "body",
+        "sw221_taillight*": "body",
+        "sw221_wipers*": "body",
+        "sw221_badge*": "body",
+        "sw221_lettering*": "body",
+        "sw221_dash*": "body",
+        "sw221_decals*": "body",
+        "sw221_needle*": "body",
+        "sw221_seat*": "body",
+        "sw221_steer*": "body",
+        "sw221_sunvisor*": "body",
+        "sw221_intmirror*": "body",
+        "sw221_chassis*": "chassis",
+        "sw221_subframe*": "chassis",
+        "sw221_lowerarm*": "chassis",
+        "sw221_upperarm*": "chassis",
+        "sw221_strut*": "chassis",
+        "sw221_strutbrace*": "chassis",
+        "sw221_spring*": "chassis",
+        "sw221_shock*": "chassis",
+        "sw221_swaybar*": "chassis",
+        "sw221_tierod*": "chassis",
+        "sw221_hub*": "chassis",
+        "sw221_brakedisc*": "chassis",
+        "sw221_caliper*": "chassis",
+        "sw221_steeringbox*": "chassis",
+        "sw221_tubs*": "chassis",
+        "sw221_radsupport*": "chassis",
+        "w221_radiator*": "chassis",
+        "sw221_fueltank*": "chassis",
+        "sw221_driveshaft*": "chassis",
+        "sw221_halfshaft*": "chassis",
+        "sw221_diff*": "chassis",
+        "sw221_exhaust*": "chassis",
+        "sw221_bumperbar*": "chassis",
+        "Susp_*": "chassis",
+        "Harness_*": "harness",
+        "sw221_heatshield*": "chassis",
+        "sw221_engine*": "engine",
+        "sw221_transmission*": "engine",
+        "sw221_intercooler*": "engine",
+        "sw221_engbaycrap*": "engine"
+      },
+      "glassMeshes": [
+        "sw221_windshield*",
+        "sw221_doorglass_*",
+        "sw221_backlight*",
+        "sw221_headlightglass*",
+        "sw221_taillightglass*"
+      ]
+    },
+    {
+      "id": "engine",
+      "name": "M275 V12 Biturbo",
+      "url": "models/engine.glb",
+      "focusLayerIds": ["engine", "internals"],
+      "camera": { "position": [1.7, 1.25, 2.1], "target": [0, 0.55, 0] },
+      "meshLayerMap": {
+        "Eng_*": "engine",
+        "Int_*": "internals"
+      }
+    }
+  ]
+}

@@ -1,0 +1,673 @@
+{
+  "$comment": "Part info database, keyed by mesh name. Keys are exact mesh names or prefixes ending in '*' (e.g. 'Int_Piston_*' covers Int_Piston_1..12; the longest matching pattern wins). Add entries here — no code changes needed. Fields: name, system, function, description.",
+
+  "Body_Hood": {
+    "name": "Hood (Bonnet)",
+    "system": "Body / Exterior",
+    "function": "Covers and protects the engine bay while allowing service access.",
+    "description": "Aluminium panel on the W221 to cut front-axle weight. Houses insulation to damp V12 intake noise and channels crash energy in a frontal impact."
+  },
+  "Body_Grille": {
+    "name": "Radiator Grille",
+    "system": "Body / Cooling airflow",
+    "function": "Feeds ambient air to the radiator stack and both intercooler circuits.",
+    "description": "The S65 AMG grille sits ahead of an unusually deep cooler pack: engine radiator, ATF cooler, power steering/ABC cooler, and the low-temperature radiator for the water-to-air charge cooling."
+  },
+  "Chassis_Floorpan": {
+    "name": "Floorpan / Unibody Floor",
+    "system": "Structure",
+    "function": "Primary structural floor tying front and rear crash structures together.",
+    "description": "The W221 uses a steel unibody with aluminium closures. The floorpan carries seat mounts, tunnel (driveshaft + exhaust routing) and the fuel tank saddle."
+  },
+  "Susp_ABCStrut_*": {
+    "name": "Active Body Control (ABC) Strut",
+    "system": "Suspension — ABC hydraulics",
+    "function": "Hydraulically adjusts spring preload at each corner to counter roll, pitch and dive in milliseconds.",
+    "description": "The S65 uses ABC rather than Airmatic: a tandem pump driven by the engine pressurises the system to ~200 bar. Each strut pairs a coil spring with a hydraulic plunger controlled by valve blocks. A common failure point — watch for fluid leaks at the strut heads."
+  },
+  "Susp_Tire_*": {
+    "name": "Tyre",
+    "system": "Suspension / Running gear",
+    "function": "The only contact patch with the road — transmits drive, braking and cornering forces.",
+    "description": "S65 AMG runs staggered fitments (255 front / 275 rear on 19–20\" wheels). With 1,000 Nm on tap, rear tyre life is famously short — inspect inner shoulders for wear."
+  },
+  "Susp_Rim_*": {
+    "name": "Wheel (Forged Rim)",
+    "system": "Suspension / Running gear",
+    "function": "Carries the tyre and transfers loads between hub and road.",
+    "description": "Forged multi-spoke AMG wheels to cut unsprung mass — a key concern given how hard the ABC hydraulics work over bumps."
+  },
+  "Susp_BrakeRotor_*": {
+    "name": "Brake Rotor (Compound Disc)",
+    "system": "Braking",
+    "function": "Converts kinetic energy to heat when clamped by the caliper.",
+    "description": "390 mm two-piece compound rotors up front: cast iron friction ring on an aluminium hat, allowing thermal expansion without coning."
+  },
+  "Susp_BrakeCaliper_*": {
+    "name": "Brake Caliper",
+    "system": "Braking",
+    "function": "Squeezes the pads against the rotor under hydraulic pressure.",
+    "description": "Fixed multi-piston AMG calipers. Front axle uses 8-piston units on the S65 — pad wear sensors report to the instrument cluster."
+  },
+  "Susp_ControlArm_*": {
+    "name": "Control Arms (Wishbones)",
+    "system": "Suspension — locating links",
+    "function": "Locate the wheel hub while letting it travel vertically.",
+    "description": "Forged aluminium arms with rubber-hydro bushings. Worn front lower bushings cause the classic W221 brake-shimmy complaint."
+  },
+  "Harness_Main": {
+    "name": "Main Body Harness",
+    "system": "Electrical",
+    "function": "Trunk-to-front power and CAN-bus backbone linking body controllers.",
+    "description": "The W221 runs multiple CAN buses (engine, interior, telematics) plus MOST fibre for infotainment. The main harness routes along the right sill from the trunk-mounted battery to the front SAM (signal acquisition module)."
+  },
+  "Harness_Battery": {
+    "name": "Battery (Trunk-mounted)",
+    "system": "Electrical",
+    "function": "Supplies cranking power and stabilises the 12 V system.",
+    "description": "Mounted in the trunk for weight distribution and heat isolation. The S65 additionally has an auxiliary battery for backup of shift-by-wire and consumers during ECO start/stop-less idle loads."
+  },
+  "Chassis_Driveshaft": {
+    "name": "Propeller Shaft (Driveshaft)",
+    "system": "Driveline",
+    "function": "Carries torque from the transmission to the rear differential.",
+    "description": "Two-piece steel shaft with a centre support bearing and flex discs at each end. The flex discs (hardy discs) are wear items — cracks cause driveline clunk."
+  },
+  "Chassis_Differential": {
+    "name": "Rear Differential & Axle Shafts",
+    "system": "Driveline",
+    "function": "Splits torque between the rear wheels while allowing them to rotate at different speeds.",
+    "description": "Strengthened rear axle centre on the S65 with a shorter final drive than lesser W221s. Axle shafts use CV joints at both ends."
+  },
+  "Chassis_FuelTank": {
+    "name": "Fuel Tank",
+    "system": "Fuel system",
+    "function": "Stores 90 L of fuel; houses the in-tank pump and level senders.",
+    "description": "Saddle-shaped tank over the rear axle with a jet pump transferring fuel between halves. The V12 at full boost can empty it in well under 200 km."
+  },
+  "Chassis_Exhaust_*": {
+    "name": "Exhaust System (one side)",
+    "system": "Exhaust",
+    "function": "Carries exhaust from the downpipes through catalysts and mufflers to the rear.",
+    "description": "True dual system, one path per bank. The S65 uses less restrictive AMG mufflers — most of the V12's distant-thunder sound signature is created here."
+  },
+  "Chassis_Radiator": {
+    "name": "Cooling Pack (Radiator)",
+    "system": "Cooling",
+    "function": "Rejects engine heat to ambient air.",
+    "description": "The S65 nose stacks the engine radiator with the ATF cooler, the ABC/power-steering cooler and the low-temperature radiator for charge cooling — airflow management here is critical."
+  },
+  "Chassis_SteeringRack": {
+    "name": "Steering Rack",
+    "system": "Steering",
+    "function": "Converts steering wheel rotation into tie-rod movement.",
+    "description": "Hydraulic rack-and-pinion, powered by the same tandem pump that pressurises ABC. Speed-sensitive assist via the parameter steering valve."
+  },
+  "Harness_FuseBox_EngineBay": {
+    "name": "Engine Bay Fuse & Relay Box (Front SAM)",
+    "system": "Electrical",
+    "function": "Distributes fused power to engine-bay consumers and reads front sensors.",
+    "description": "The front Signal Acquisition Module combines fuses, relays and a CAN node. First stop when chasing dead circuits at the front of the car."
+  },
+  "Body_GrilleLouvres": {
+    "name": "Grille Louvres (Chrome)",
+    "system": "Body / Exterior",
+    "function": "Horizontal chrome bars of the radiator grille.",
+    "description": "The W221 S65 wears a three-louvre chrome grille — one of the fastest ways to tell an S65 from lesser W221s (which use more, thinner louvres)."
+  },
+  "Body_BumperIntake_*": {
+    "name": "Bumper Air Intake",
+    "system": "Body / Cooling airflow",
+    "function": "Feeds air to the intercooler low-temp radiator, oil coolers and front brakes.",
+    "description": "The S65 front apron has enlarged intakes — the V12's cooling stack needs far more airflow than the V8 cars, especially with ABC and A/C condensers sharing the nose."
+  },
+  "Body_Interior*": {
+    "name": "Cabin / Interior",
+    "system": "Interior",
+    "function": "Seating, controls and trim for driver and passengers.",
+    "description": "S65s came near-fully optioned: ventilated massage seats, Exclusive nappa leather, Alcantara headliner. The interior lifts out with the body shell in this model."
+  },
+  "Chassis_ExhaustTips_*": {
+    "name": "Quad Exhaust Tips",
+    "system": "Exhaust",
+    "function": "Finishers where the twin pipes exit each side of the rear apron.",
+    "description": "Chromed twin oval tips per side — the S65's quad-tip signature. AMG V12 cars got oval tips where V8 AMGs of the era wore squared ones."
+  },
+  "Body_Headlight_*": {
+    "name": "Headlamp (Bi-Xenon)",
+    "system": "Body / Lighting",
+    "function": "Active bi-xenon low/high beam with cornering light.",
+    "description": "W221s use the Intelligent Light System: the projector swivels with steering angle and adapts its pattern to speed. Ballast failures are the usual fault."
+  },
+  "Body_Taillight_*": {
+    "name": "Tail Lamp",
+    "system": "Body / Lighting",
+    "function": "Tail, brake, indicator and reverse functions in one LED cluster.",
+    "description": "Facelift W221s switched to full LED clusters with two-stage brake-light intensity (brighter under hard braking)."
+  },
+  "Body_Mirror_*": {
+    "name": "Door Mirror",
+    "system": "Body / Exterior",
+    "function": "Rear view; houses indicator repeater and blind-spot radar warning LED.",
+    "description": "Power-folding, auto-dimming, heated, with memory. The blind-spot warning triangle lights up in the glass."
+  },
+  "Body_Glass_Side_*": {
+    "name": "Side Glass (Greenhouse)",
+    "system": "Body / Glazing",
+    "function": "Side visibility; part of the acoustic insulation package.",
+    "description": "Double-laminated acoustic glass on the S-Class — a big part of why the V12 is nearly inaudible at cruise."
+  },
+  "Body_Pillars_*": {
+    "name": "Roof Pillars (A/B/C)",
+    "system": "Body / Structure",
+    "function": "Carry roof loads and form the passenger safety cell.",
+    "description": "High-strength steel pillars; the B-pillar is the main side-impact load path and anchors the front seatbelts."
+  },
+  "Harness_ECU": {
+    "name": "Engine Control Unit (ME 2.7.1)",
+    "system": "Electrical / Engine management",
+    "function": "Runs fuelling, ignition, boost control and torque management for all 12 cylinders.",
+    "description": "The ME ECU coordinates with the transmission and ESP over CAN to cap torque in lower gears — the famous 1,000 Nm is itself an electronic limit."
+  },
+  "EngineProxy_Block": {
+    "name": "M275 Engine (in bay)",
+    "system": "Powertrain",
+    "function": "Placeholder engine shown in the bay — use Focus Engine to study it in detail.",
+    "description": "The engine sits longitudinally, set far back against the firewall for weight balance. Switch to the engine focus view to peel its layers."
+  },
+  "EngineProxy_Transmission": {
+    "name": "5G-Tronic Transmission (W5A 780)",
+    "system": "Powertrain / Driveline",
+    "function": "Five-speed automatic transferring up to 1000 Nm to the rear axle.",
+    "description": "The S65 keeps the older 5-speed because the 7G-Tronic of the era couldn't take the V12's torque. The W5A 780 is the strengthened version rated for AMG duty."
+  },
+
+  "sw221_body_sedan*": {
+    "name": "Body Shell (Unibody)",
+    "system": "Body / Structure",
+    "function": "The welded steel structure everything else bolts to.",
+    "description": "W221 unibody with aluminium hood, trunk lid and front fenders. Torsional stiffness rose ~25% over the W220 — the foundation that lets ABC work precisely."
+  },
+  "sw221_hood_*": {
+    "name": "Hood (Bonnet)",
+    "system": "Body / Exterior",
+    "function": "Covers the engine bay; service access to the V12.",
+    "description": "Aluminium panel with the facelift power dome. Under it, the M275 fills the bay so completely that even spark-plug access means removing the charge-air ducting."
+  },
+  "sw221_door_*": {
+    "name": "Door",
+    "system": "Body / Closures",
+    "function": "Entry/exit; carries glass, side-impact protection and the door module.",
+    "description": "Double-sealed doors with optional soft-close. Side-impact beams and pressure sensors for the side airbags live inside."
+  },
+  "sw221_doorglass_*": {
+    "name": "Door Glass",
+    "system": "Body / Glazing",
+    "function": "Side visibility; part of the acoustic package.",
+    "description": "Double-laminated acoustic glass — a big part of why the V12 is nearly inaudible at cruise."
+  },
+  "sw221_windshield*": {
+    "name": "Windshield",
+    "system": "Body / Glazing",
+    "function": "Forward visibility; bonded in as a structural member.",
+    "description": "Laminated, acoustically damped, with the rain/light sensor at the mirror mount. Bonded glass contributes measurably to body stiffness."
+  },
+  "sw221_backlight*": {
+    "name": "Rear Window",
+    "system": "Body / Glazing",
+    "function": "Rear visibility; carries the defroster grid and antennas.",
+    "description": "The FM diversity and remote-key antennas are printed into the defroster grid — scratched grids cause real reception faults."
+  },
+  "sw221_bumper_F*": {
+    "name": "Front Bumper (AMG)",
+    "system": "Body / Exterior",
+    "function": "Impact absorption, cooling airflow management, sensor carrier.",
+    "description": "Facelift AMG apron with enlarged intakes for the S65's cooling stack. Houses the Parktronic sensors; behind it sits an aluminium crash member."
+  },
+  "sw221_bumper_R*": {
+    "name": "Rear Bumper (AMG)",
+    "system": "Body / Exterior",
+    "function": "Rear impact absorption; frames the quad exhaust tips.",
+    "description": "AMG rear apron with cutouts for the twin oval tips each side — the giveaway that a V12 lives up front."
+  },
+  "sw221_fender_*": {
+    "name": "Front Fender",
+    "system": "Body / Exterior",
+    "function": "Covers the front wheelhouse.",
+    "description": "Aluminium on the W221. The S65 wears its 'V12 BITURBO' badges here, just behind the arch."
+  },
+  "sw221_sideskirts*": {
+    "name": "Side Skirts (AMG)",
+    "system": "Body / Exterior",
+    "function": "Visually lowers the car and manages airflow along the sills.",
+    "description": "Part of the AMG body kit, painted body colour on the S65."
+  },
+  "sw221_tailgate*": {
+    "name": "Trunk Lid",
+    "system": "Body / Closures",
+    "function": "Cargo access; power closing on the S65.",
+    "description": "Aluminium lid with hydraulic power closing, carrying the S 65 AMG lettering."
+  },
+  "sw221_wipers*": {
+    "name": "Wipers",
+    "system": "Body / Visibility",
+    "function": "Windshield clearing with rain-sensor-driven intervals.",
+    "description": "The park position lifts slightly off-glass to protect the rubber during heat soak."
+  },
+  "sw221_badge*": {
+    "name": "Badging",
+    "system": "Body / Exterior",
+    "function": "Model identification.",
+    "description": "Hood star and 'V12 BITURBO' fender badges. Enthusiasts check these against the VIN — badge swaps are common on lesser W221s."
+  },
+  "sw221_lettering*": {
+    "name": "Trunk Lettering",
+    "system": "Body / Exterior",
+    "function": "Model designation on the trunk lid.",
+    "description": "S 65 AMG — spacing and font are model-year specific, another authenticity check."
+  },
+  "sw221_mirror*": {
+    "name": "Door Mirror",
+    "system": "Body / Exterior",
+    "function": "Rear view; houses indicator repeater and blind-spot warning.",
+    "description": "Power-folding, auto-dimming, heated, with memory. The blind-spot warning triangle lights in the glass."
+  },
+  "sw221_headlight*": {
+    "name": "Headlamp (Bi-Xenon ILS)",
+    "system": "Body / Lighting",
+    "function": "Active bi-xenon low/high beam with cornering light.",
+    "description": "Intelligent Light System: the projector swivels with steering angle and adapts its pattern to speed. Ballast failures are the usual fault."
+  },
+  "sw221_taillight*": {
+    "name": "Tail Lamp",
+    "system": "Body / Lighting",
+    "function": "Tail, brake, indicator and reverse functions.",
+    "description": "Facelift LED clusters with two-stage brake-light intensity — flashing under emergency braking."
+  },
+  "sw221_dash*": {
+    "name": "Dashboard",
+    "system": "Interior",
+    "function": "Instrument panel, COMAND display, HVAC outlets, passenger airbag.",
+    "description": "The W221 dash introduced the COMAND controller-and-screen layout Mercedes kept for a decade. Behind it runs the main interior harness and the cabin CAN gateway."
+  },
+  "sw221_decals*": {
+    "name": "Instrument Cluster",
+    "system": "Interior / Electronics",
+    "function": "Speedometer, tachometer, trip computer.",
+    "description": "On the S65 the 360 km/h speedometer is one of the subtle flexes. The cluster is just another CAN node — if it dies, the car still drives."
+  },
+  "sw221_needle_*": {
+    "name": "Gauge Needle",
+    "system": "Interior / Electronics",
+    "function": "Analog indication, stepper-motor driven.",
+    "description": "The needles sweep full-scale on startup as a self-test."
+  },
+  "sw221_seat*": {
+    "name": "Seats",
+    "system": "Interior",
+    "function": "Seating with ventilation, massage and dynamic bolsters.",
+    "description": "Ventilated massage multicontour seats in Exclusive nappa. Each front seat has its own control module and weighs as much as an engine block."
+  },
+  "sw221_steer*": {
+    "name": "Steering Wheel",
+    "system": "Interior / Controls",
+    "function": "Driver input; shift paddles and multifunction controls.",
+    "description": "AMG wheel with aluminium paddles for the 5G-Tronic. The driver airbag and clock spring live behind it."
+  },
+  "sw221_doorpanel_*": {
+    "name": "Door Panel (Interior)",
+    "system": "Interior",
+    "function": "Interior trim; window/mirror/seat controls, speaker carrier.",
+    "description": "Wood and nappa over the door module; the harman/kardon mid-woofers mount here."
+  },
+  "sw221_sunvisor*": {
+    "name": "Sun Visor",
+    "system": "Interior",
+    "function": "Glare protection.",
+    "description": "With illuminated vanity mirrors, naturally."
+  },
+  "sw221_intmirror*": {
+    "name": "Interior Mirror",
+    "system": "Interior",
+    "function": "Rear view; auto-dimming.",
+    "description": "Electrochromic auto-dim; Distronic cars hide extra electronics in the mount."
+  },
+  "sw221_chassis*": {
+    "name": "Underbody / Floorpan",
+    "system": "Structure",
+    "function": "Structural floor tying front and rear crash structures together.",
+    "description": "Steel unibody floor with the transmission tunnel routing driveshaft and exhaust. Seat mounts, tank saddle and jacking points all land here."
+  },
+  "sw221_subframe*": {
+    "name": "Subframe",
+    "system": "Structure / Suspension",
+    "function": "Carries suspension and drivetrain loads into the body through rubber mounts.",
+    "description": "The front subframe carries the engine and lower arms; the rear carries the differential and multi-link. Worn subframe bushings blur the whole car's responses."
+  },
+  "sw221_lowerarm*": {
+    "name": "Lower Control Arm",
+    "system": "Suspension — locating links",
+    "function": "Locates the wheel carrier at its lower pivot.",
+    "description": "Forged aluminium. Front lower bushings are the classic W221 wear item — brake shimmy is the symptom."
+  },
+  "sw221_upperarm*": {
+    "name": "Upper Control Arm",
+    "system": "Suspension — locating links",
+    "function": "Locates the wheel carrier at its upper pivot.",
+    "description": "Part of the rear multi-link — five links per rear corner control toe, camber and thrust independently."
+  },
+  "sw221_strutbrace*": {
+    "name": "Strut Brace",
+    "system": "Structure",
+    "function": "Ties the strut towers together to stiffen the front end.",
+    "description": "Reduces tower flex under cornering loads — buys steering precision, not power."
+  },
+  "sw221_strut_F*": {
+    "name": "ABC Strut (Front)",
+    "system": "Suspension — ABC hydraulics",
+    "function": "Hydraulically adjusts spring preload to counter roll, pitch and dive in milliseconds.",
+    "description": "Active Body Control: ~200 bar from the engine-driven tandem pump, valve blocks per axle. Leaks at the strut heads are the known failure — the car sags overnight when they go."
+  },
+  "sw221_spring_R*": {
+    "name": "Spring (Rear ABC)",
+    "system": "Suspension",
+    "function": "Carries the corner's static load; the ABC plunger adjusts its preload.",
+    "description": "The coil does the steady-state work so the hydraulics only handle dynamics — key to ABC's response speed."
+  },
+  "sw221_shock_R*": {
+    "name": "Damper (Rear)",
+    "system": "Suspension",
+    "function": "Controls wheel oscillation.",
+    "description": "Integrated into the rear ABC strut assembly on the S65."
+  },
+  "sw221_swaybar*": {
+    "name": "Anti-roll Bar",
+    "system": "Suspension",
+    "function": "Couples left and right wheels to resist body roll.",
+    "description": "Thinner than you'd expect on an ABC car — the hydraulics do most of the roll control, the bars just trim balance."
+  },
+  "sw221_tierod*": {
+    "name": "Tie Rod",
+    "system": "Steering",
+    "function": "Connects the steering rack to the wheel carrier.",
+    "description": "Adjustable for toe during alignment. Play here shows up as vague on-centre feel."
+  },
+  "sw221_hub*": {
+    "name": "Wheel Hub & Carrier",
+    "system": "Suspension / Running gear",
+    "function": "Carries the wheel bearing, brake disc and wheel.",
+    "description": "The knuckle every arm, rod and strut meets. Wheel-speed sensors read a magnetic encoder in the bearing seal."
+  },
+  "sw221_brakedisc*": {
+    "name": "Brake Disc (AMG Compound)",
+    "system": "Braking",
+    "function": "Converts kinetic energy to heat when clamped by the caliper.",
+    "description": "390 mm two-piece compound front rotors: cast iron friction ring on an aluminium hat, allowing heat expansion without coning."
+  },
+  "sw221_caliper*": {
+    "name": "Brake Caliper (AMG)",
+    "system": "Braking",
+    "function": "Clamps the pads against the disc under hydraulic pressure.",
+    "description": "Fixed multi-piston AMG calipers; pad-wear sensors report to the cluster."
+  },
+  "sw221_steeringbox*": {
+    "name": "Steering Rack",
+    "system": "Steering",
+    "function": "Converts steering wheel rotation into tie-rod movement.",
+    "description": "Hydraulic rack-and-pinion powered by the same tandem pump as ABC, with speed-sensitive assist."
+  },
+  "sw221_tubs*": {
+    "name": "Wheel Tubs / Inner Arches",
+    "system": "Structure",
+    "function": "Inner wheelhouse panels; keep spray and debris out of the bay.",
+    "description": "The front liners hide the ABC lines and headlamp washer plumbing."
+  },
+  "sw221_radsupport*": {
+    "name": "Radiator Support",
+    "system": "Structure",
+    "function": "Front-end carrier for the cooling pack, latches and headlamps.",
+    "description": "The bolt-on front module — after a front hit, this gets replaced along with the crash member."
+  },
+  "w221_radiator*": {
+    "name": "Cooling Pack (Radiator)",
+    "system": "Cooling",
+    "function": "Rejects engine heat to ambient air.",
+    "description": "The S65 stacks the engine radiator with ATF, ABC/PS and low-temperature charge-cooling radiators — the whole nose is heat exchanger."
+  },
+  "sw221_fueltank*": {
+    "name": "Fuel Tank",
+    "system": "Fuel system",
+    "function": "Stores 90 L; houses the in-tank pump and level senders.",
+    "description": "Saddle tank over the rear axle with a jet pump balancing the halves. The V12 at full boost can empty it in well under 200 km."
+  },
+  "sw221_driveshaft*": {
+    "name": "Propeller Shaft",
+    "system": "Driveline",
+    "function": "Carries torque from the transmission to the rear differential.",
+    "description": "Two-piece with centre bearing and flex discs. Cracked flex discs cause the classic driveline clunk."
+  },
+  "sw221_halfshaft*": {
+    "name": "Axle Shaft (Halfshaft)",
+    "system": "Driveline",
+    "function": "Drives a rear wheel from the differential.",
+    "description": "CV-jointed shafts, uprated on the S65 for the 1,000 Nm torque cap."
+  },
+  "sw221_diff*": {
+    "name": "Rear Differential",
+    "system": "Driveline",
+    "function": "Splits torque between the rear wheels.",
+    "description": "Strengthened centre with a shorter final drive than lesser W221s — it runs hot enough under load to need cooling fins."
+  },
+  "sw221_exhausttip*": {
+    "name": "Quad Exhaust Tips",
+    "system": "Exhaust",
+    "function": "Finishers where the twin pipes exit each side.",
+    "description": "Chromed twin oval tips per side — the S65 signature. V8 AMGs of the era wore squared tips."
+  },
+  "sw221_exhaust_*": {
+    "name": "Exhaust System",
+    "system": "Exhaust",
+    "function": "Carries exhaust through catalysts and mufflers to the rear.",
+    "description": "True dual system, one path per bank. Most of the V12's distant-thunder signature is made in the AMG mufflers."
+  },
+  "sw221_bumperbar*": {
+    "name": "Front Crash Member",
+    "system": "Structure / Safety",
+    "function": "Primary energy path in a frontal impact.",
+    "description": "Aluminium beam behind the bumper skin, bolted via crash boxes designed to crumple and be replaced."
+  },
+  "sw221_engine*": {
+    "name": "M275 V12 Biturbo (in bay)",
+    "system": "Powertrain",
+    "function": "6.0L twin-turbo V12 — 612 hp, 1,000 Nm. Use Focus Engine to study it in detail.",
+    "description": "Sits longitudinally, set back against the firewall; the bay is so packed the turbos are barely visible from above. Switch to the engine focus view to peel it down to the crank."
+  },
+  "sw221_transmission*": {
+    "name": "5G-Tronic Transmission (W5A 780)",
+    "system": "Powertrain / Driveline",
+    "function": "Five-speed automatic rated for the V12's 1,000 Nm.",
+    "description": "The S65 kept the older 5-speed because the 7G-Tronic couldn't take the torque — strengthened W5A 780 with AMG Speedshift calibration."
+  },
+  "sw221_intercooler*": {
+    "name": "Charge-air Intercooler",
+    "system": "Engine — forced induction",
+    "function": "Cools compressed charge air before the intake.",
+    "description": "Water-to-air system with its own low-temperature circuit and pump — compact and immune to heat soak at low road speed."
+  },
+  "sw221_heatshield*": {
+    "name": "Heat Shield",
+    "system": "Thermal management",
+    "function": "Protects the tunnel and floor from exhaust heat.",
+    "description": "Layered aluminium shields — safety-relevant on a car whose exhaust runs ~800 °C at the downpipes."
+  },
+  "sw221_engbaycrap*": {
+    "name": "Engine Bay Ancillaries",
+    "system": "Powertrain / Ancillaries",
+    "function": "Reservoirs, ducting and small hardware around the engine.",
+    "description": "Coolant and ABC reservoirs, air ducts, covers — the clutter that makes real engine bays look nothing like brochures."
+  },
+
+  "Eng_Block": {
+    "name": "Cylinder Block (Crankcase)",
+    "system": "Engine — structure",
+    "function": "Houses the crankshaft and both cylinder banks; the structural core of the engine.",
+    "description": "Aluminium block with cast-in Silitec liners, 60° bank angle, 5,980 cc. The 60° V12 is inherently balanced, which is why the M275 idles almost imperceptibly despite 612 hp in S65 tune."
+  },
+  "Eng_CylinderBank_*": {
+    "name": "Cylinder Bank",
+    "system": "Engine — structure",
+    "function": "Carries six cylinders, one SOHC head and the cam drive for that side.",
+    "description": "Each bank has a single overhead cam operating three valves per cylinder (two intake, one exhaust) with twin spark plugs per cylinder — a Mercedes V12 signature of this era."
+  },
+  "Eng_HeadCover_*": {
+    "name": "Cylinder Head Cover",
+    "system": "Engine — sealing",
+    "function": "Seals the valvetrain and carries the ignition coil packs.",
+    "description": "Under each cover sit twelve coils (two per cylinder — twin-spark). Oil weep at these covers is a common M275 service item."
+  },
+  "Eng_IntakeManifold": {
+    "name": "Intake Manifold",
+    "system": "Engine — air path",
+    "function": "Distributes cooled, compressed charge air to all twelve cylinders.",
+    "description": "Sits in the engine's V, fed by the water-to-air intercoolers. Downstream of both throttle bodies; runners are kept short because the turbos, not runner tuning, provide the torque."
+  },
+  "Eng_Turbo_*": {
+    "name": "Turbocharger",
+    "system": "Engine — forced induction",
+    "function": "Uses exhaust energy to compress intake air, one turbo per bank.",
+    "description": "Two water-cooled turbochargers give the S65 tune ~1.5 bar of boost, 612 hp and a limited 1,000 Nm from 2,000 rpm. Listen for wastegate rattle on this engine family."
+  },
+  "Eng_ExhaustManifold_*": {
+    "name": "Exhaust Manifold",
+    "system": "Engine — exhaust",
+    "function": "Collects exhaust from one bank and drives its turbocharger turbine.",
+    "description": "Short cast manifolds keep thermal mass low for fast turbo response. Heat management here is critical — the bay runs hot enough that heat shields are safety-relevant parts."
+  },
+  "Eng_Intercooler_*": {
+    "name": "Charge-air Intercooler (water-to-air)",
+    "system": "Engine — forced induction",
+    "function": "Cools compressed charge air before it enters the intake manifold.",
+    "description": "The M275 uses a low-temperature liquid circuit with its own pump and front radiator instead of bulky air-to-air cores — compact enough to sit on top of the engine and immune to heat soak at low road speed."
+  },
+  "Eng_ChargePipe_*": {
+    "name": "Charge Pipe",
+    "system": "Engine — air path",
+    "function": "Routes compressed air from turbo outlet to intercooler and manifold.",
+    "description": "Boost leaks at these joints cause soft low-end torque and rich-running codes — pressure-test here first when boost is down."
+  },
+  "Eng_OilPan": {
+    "name": "Oil Pan (Sump)",
+    "system": "Engine — lubrication",
+    "function": "Reservoir for ~10 L of engine oil; feeds the oil pump pickup.",
+    "description": "The V12 holds significantly more oil than the V8s. Level sensing is electronic — there is no dipstick on late M275 cars."
+  },
+  "Eng_Alternator": {
+    "name": "Alternator",
+    "system": "Engine — ancillaries",
+    "function": "Generates electrical power for the 12 V system, belt-driven off the crank.",
+    "description": "High-output unit (~190 A) to feed the W221's dozens of ECUs. Buried low on the engine — access is from below with the belly pan removed."
+  },
+  "Eng_ACCompressor": {
+    "name": "A/C Compressor",
+    "system": "Engine — ancillaries / HVAC",
+    "function": "Compresses refrigerant for the climate control system.",
+    "description": "Driven by the single serpentine belt. On the S65 the belt also drives the critical ABC tandem pump — a snapped belt disables suspension assist, steering assist and charging at once."
+  },
+  "Eng_CrankPulley": {
+    "name": "Crankshaft Pulley (Damper)",
+    "system": "Engine — ancillaries drive",
+    "function": "Drives the serpentine belt and damps crankshaft torsional vibration.",
+    "description": "A dual-mass elastomer damper. Inspect the rubber bond ring during belt service — separation causes belt misalignment and vibration."
+  },
+  "Eng_FrontCover": {
+    "name": "Front Timing Cover",
+    "system": "Engine — structure",
+    "function": "Encloses the timing chain drive at the front of the block.",
+    "description": "Behind it, a duplex chain drives both bank camshafts. Chain stretch is rare on the M275 compared with later M157 V8s, but guide rails age with oil neglect."
+  },
+
+  "Eng_SerpentineBelt": {
+    "name": "Serpentine Belt",
+    "system": "Engine — ancillaries drive",
+    "function": "Single poly-V belt driving alternator, A/C compressor and the ABC tandem pump off the crank pulley.",
+    "description": "One belt runs everything — if it fails, the car loses charging, A/C, steering assist and ABC suspension pressure simultaneously. Inspect at every service."
+  },
+  "Eng_ABCTandemPump": {
+    "name": "ABC / Power Steering Tandem Pump",
+    "system": "Engine — ancillaries / Suspension hydraulics",
+    "function": "One pump body with two circuits: ~200 bar for Active Body Control plus the steering assist circuit.",
+    "description": "The hardest-worked ancillary on an S65. Whining at idle or a 'white steam' aerated reservoir means it's on the way out — and ABC struts drop soon after."
+  },
+  "Eng_ThrottleBody_*": {
+    "name": "Throttle Body",
+    "system": "Engine — air path",
+    "function": "Meters airflow into the intake plenum, one per bank.",
+    "description": "Two electronic throttles, cross-checked by the ECU. Limp-home mode (fixed ~1,200 rpm) usually traces back to a throttle actuator fault."
+  },
+  "Eng_Downpipe_*": {
+    "name": "Turbo Downpipe",
+    "system": "Engine — exhaust",
+    "function": "Carries exhaust from the turbine outlet to the catalysts.",
+    "description": "Post-turbine exhaust is still ~800 °C at full load; the downpipes are double-walled with an air gap for heat control."
+  },
+  "Eng_OilFilter": {
+    "name": "Oil Filter Housing",
+    "system": "Engine — lubrication",
+    "function": "Full-flow filtration of the ~10 L oil charge.",
+    "description": "Top-loading cartridge filter — one of the few genuinely easy service items on this engine."
+  },
+  "Int_Crankshaft": {
+    "name": "Crankshaft",
+    "system": "Engine internals — rotating assembly",
+    "function": "Converts piston thrust into rotating torque delivered to the flywheel.",
+    "description": "Forged steel, seven main bearings, six crankpins each shared by two connecting rods (one per bank). The 60° V12 fires every 60° of rotation — twelve evenly spaced power pulses per cycle is why the engine is this smooth."
+  },
+  "Int_Piston_*": {
+    "name": "Piston",
+    "system": "Engine internals — rotating assembly",
+    "function": "Transfers combustion pressure to the connecting rod.",
+    "description": "Cast aluminium with a low 9.0:1 compression ratio to tolerate ~1.5 bar boost. Cooled by oil squirters aimed at the underside of the crown — a must at 1,000 Nm."
+  },
+  "Int_ConnectingRod_*": {
+    "name": "Connecting Rod",
+    "system": "Engine internals — rotating assembly",
+    "function": "Links a piston to its crankpin, converting linear to rotary motion.",
+    "description": "Forged, cracked-cap steel rods. Two rods share each crankpin side by side, which is why opposing bank cylinders are slightly offset along the block."
+  },
+  "Int_Camshaft_*": {
+    "name": "Camshaft (SOHC, one per bank)",
+    "system": "Engine internals — valvetrain",
+    "function": "Opens the three valves per cylinder in time with the crank (2:1 reduction).",
+    "description": "The M275 is single-overhead-cam with 3 valves per cylinder — chosen for compact heads and fast catalyst light-off, not peak-rpm breathing. The turbos make up for the airflow. No variable valve timing on this engine."
+  },
+  "Int_Valves_*": {
+    "name": "Valves (3 per cylinder)",
+    "system": "Engine internals — valvetrain",
+    "function": "Two intake valves and one exhaust valve per cylinder admit charge air and release exhaust.",
+    "description": "Opened by roller rockers with hydraulic lash compensation — no adjustment ever needed. The single large exhaust valve runs a sodium-filled stem for cooling."
+  },
+  "Int_TimingChain": {
+    "name": "Timing Chain (Duplex)",
+    "system": "Engine internals — cam drive",
+    "function": "Synchronises both camshafts to the crankshaft at a 2:1 reduction.",
+    "description": "A double-row chain runs up the front of the block over both cam sprockets, tensioned hydraulically. Rattle at cold start points at the tensioner or guide rails."
+  },
+  "Int_CamSprocket_*": {
+    "name": "Camshaft Sprocket",
+    "system": "Engine internals — cam drive",
+    "function": "Driven by the timing chain; turns the camshaft at half crank speed.",
+    "description": "Bolted to the cam nose. The M275 has no cam phasers — valve timing is fixed, and boost does the breathing work."
+  },
+  "Int_CrankSprocket": {
+    "name": "Crankshaft Sprocket",
+    "system": "Engine internals — cam drive",
+    "function": "Drives the timing chain from the crank nose.",
+    "description": "Keyed to the crankshaft in front of main bearing #1, behind the front cover and crank pulley."
+  },
+  "Int_Flywheel": {
+    "name": "Flywheel / Drive Plate",
+    "system": "Engine internals — output",
+    "function": "Smooths power delivery and couples the crank to the torque converter.",
+    "description": "A flex plate bolts the crank to the 5G-Tronic torque converter. Also carries the ring gear the starter engages and the crank position sensor's trigger teeth."
+  }
+}
